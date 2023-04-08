@@ -122,11 +122,11 @@ export function Settings(props: { closeSettings: () => void }) {
 
   const showUsage = !!accessStore.token || !!accessStore.accessCode;
 
-  useEffect(() => {
-    checkUpdate();
-    showUsage && checkUsage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   checkUpdate();
+  //   showUsage && checkUsage();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   useEffect(() => {
     const keydownEvent = (e: KeyboardEvent) => {
@@ -220,7 +220,7 @@ export function Settings(props: { closeSettings: () => void }) {
             </Popover>
           </SettingItem>
 
-          <SettingItem
+          {/* <SettingItem
             title={Locale.Settings.Update.Version(currentId)}
             subTitle={
               checkingUpdate
@@ -243,7 +243,7 @@ export function Settings(props: { closeSettings: () => void }) {
                 onClick={() => checkUpdate(true)}
               />
             )}
-          </SettingItem>
+          </SettingItem> */}
 
           <SettingItem title={Locale.Settings.SendKey}>
             <select
