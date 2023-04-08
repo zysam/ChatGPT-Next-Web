@@ -193,7 +193,6 @@ function _Home() {
             key="chat"
             showSideBar={() => setShowSideBar(true)}
             sideBarShowing={showSideBar}
-            autoSize={{ minRows: 2, maxRows: 6 }}
           />
         )}
       </div>
