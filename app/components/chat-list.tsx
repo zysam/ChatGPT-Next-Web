@@ -49,8 +49,10 @@ export function ChatItem(props: {
     </Draggable>
   );
 }
-
-export function ChatList() {
+type ChatListProps = {
+  onClick?: () => void;
+};
+export function ChatList({ onClick }: ChatListProps) {
   const [sessions, selectedIndex, selectSession, removeSession, moveSession] =
     useChatStore((state) => [
       state.sessions,
@@ -95,7 +97,10 @@ export function ChatList() {
                 id={item.id}
                 index={i}
                 selected={i === selectedIndex}
-                onClick={() => selectSession(i)}
+                onClick={() => {
+                  selectSession(i);
+                  onClick && onClick();
+                }}
                 onDelete={chatStore.deleteSession}
               />
             ))}

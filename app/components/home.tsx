@@ -120,9 +120,9 @@ function _Home() {
       >
         <div className={styles["sidebar-header"]}>
           <div className={styles["sidebar-title"]}>ChatGPT Next</div>
-          <div className={styles["sidebar-sub-title"]}>
+          {/* <div className={styles["sidebar-sub-title"]}>
             Build your own AI assistant.
-          </div>
+          </div> */}
           <div className={styles["sidebar-logo"]}>
             <ChatGptIcon />
           </div>
@@ -131,11 +131,15 @@ function _Home() {
         <div
           className={styles["sidebar-body"]}
           onClick={() => {
-            setOpenSettings(false);
-            setShowSideBar(false);
+            // setOpenSettings(false);
+            // setShowSideBar(false);
           }}
         >
-          <ChatList />
+          <ChatList
+            onClick={() => {
+              setShowSideBar(false);
+            }}
+          />
         </div>
 
         <div className={styles["sidebar-tail"]}>
@@ -156,11 +160,11 @@ function _Home() {
                 shadow
               />
             </div>
-            <div className={styles["sidebar-action"]}>
+            {/* <div className={styles["sidebar-action"]}>
               <a href={REPO_URL} target="_blank">
                 <IconButton icon={<GithubIcon />} shadow />
               </a>
-            </div>
+            </div> */}
           </div>
           <div>
             <IconButton

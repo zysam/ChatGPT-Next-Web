@@ -1,5 +1,5 @@
 .window-header {
-  padding: 14px 20px;
+  padding: 14px 14px;
   border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
   position: relative;
 
@@ -10,16 +10,20 @@
 
 .window-header-title {
   max-width: calc(100% - 100px);
+  // align-self: center;
+  flex-grow: 1;
   overflow: hidden;
 
   .window-header-main-title {
-    font-size: 20px;
+    // font-size: 20px;
     font-weight: bolder;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
     white-space: nowrap;
     display: block;
-    max-width: 50vw;
+    padding: 0 8px;
+    // max-width: 50vw;
   }
 
   .window-header-sub-title {
@@ -34,4 +38,10 @@
 
 .window-action-button {
   margin-left: 10px;
+  border: none;
+  padding: 2px;
+}
+
+.window-action-button-return {
+  margin-left: -2px;
 }

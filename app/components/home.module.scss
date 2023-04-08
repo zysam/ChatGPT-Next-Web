@@ -10,7 +10,7 @@
   background-color: var(--white);
   min-width: 600px;
   min-height: 480px;
-  max-width: 900px;
+  // max-width: 900px;
 
   display: flex;
   overflow: hidden;
@@ -233,7 +233,7 @@
   max-width: var(--message-max-width);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  // align-items: flex-start;
   animation: slide-in ease 0.3s;
 
   &:hover {
@@ -251,6 +251,12 @@
 
 .chat-message-avatar {
   margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  // flex: none;
+  // min-width: 200px;
+  // align-items: center;
 }
 
 .chat-message-status {
@@ -272,6 +278,7 @@
 }
 
 .chat-message-item {
+  flex: none;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 10px;
@@ -321,7 +328,7 @@
 .chat-message-actions {
   display: flex;
   flex-direction: row-reverse;
-  width: 100%;
+  // width: 100%;
   padding-top: 5px;
   box-sizing: border-box;
   font-size: 12px;

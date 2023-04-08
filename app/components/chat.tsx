@@ -536,6 +536,21 @@ export function Chat(props: {
   return (
     <div className={styles.chat} key={session.id}>
       <div className={styles["window-header"]}>
+        <div>
+          <div
+            className={
+              styles["window-action-button-return"] + " " + styles.mobile
+            }
+          >
+            <IconButton
+              icon={<ReturnIcon />}
+              // bordered
+              // className={styles['window-action-button']}
+              title={Locale.Chat.Actions.ChatList}
+              onClick={props?.showSideBar}
+            />
+          </div>
+        </div>
         <div className={styles["window-header-title"]}>
           <div
             className={`${styles["window-header-main-title"]} ${styles["chat-body-title"]}`}
@@ -550,19 +565,19 @@ export function Chat(props: {
           >
             {session.topic}
           </div>
-          <div className={styles["window-header-sub-title"]}>
+          {/* <div className={styles["window-header-sub-title"]}>
             {Locale.Chat.SubTitle(session.messages.length)}
-          </div>
+          </div> */}
         </div>
         <div className={styles["window-actions"]}>
-          <div className={styles["window-action-button"] + " " + styles.mobile}>
+          {/* <div className={styles["window-action-button"] + " " + styles.mobile}>
             <IconButton
               icon={<ReturnIcon />}
               bordered
               title={Locale.Chat.Actions.ChatList}
               onClick={props?.showSideBar}
             />
-          </div>
+          </div> */}
           <div className={styles["window-action-button"]}>
             <IconButton
               icon={<BrainIcon />}
@@ -618,6 +633,13 @@ export function Chat(props: {
               <div className={styles["chat-message-container"]}>
                 <div className={styles["chat-message-avatar"]}>
                   <Avatar role={message.role} />
+                  {!isUser && !message.preview && (
+                    <div className={styles["chat-message-actions"]}>
+                      <div className={styles["chat-message-action-date"]}>
+                        {message.date.toLocaleString()}
+                      </div>
+                    </div>
+                  )}
                 </div>
                 {(message.preview || message.streaming) && (
                   <div className={styles["chat-message-status"]}>
@@ -669,13 +691,6 @@ export function Chat(props: {
                     </div>
                   )}
                 </div>
-                {!isUser && !message.preview && (
-                  <div className={styles["chat-message-actions"]}>
-                    <div className={styles["chat-message-action-date"]}>
-                      {message.date.toLocaleString()}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           );
